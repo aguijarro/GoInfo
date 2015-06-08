@@ -1,0 +1,80 @@
+{{ define "content" }}
+
+<script type="text/javascript">
+
+	$(document).ready(function() {
+	  $('table.highchart').highchartTable();
+	});
+
+</script>
+
+<p class="lead">
+  <h1> Estad&iacutea promedio de d&iacuteas de visita por Continente</h1>
+  <h5> Fuente de Datos: Mongo DB</h5>
+</p>
+
+	<table class="highchart" data-graph-container-before="1" style="display:none" data-graph-type="column">
+    	<thead>
+        	<tr>
+            	<th>Descripción</th>
+            	<th>anio1</th>
+            	<th>anio2</th>
+            	<th>anio3</th>
+            	<th>anio4</th>
+            	<th>anio5</th>
+            	<th>anio6</th>            	            	            	
+        	</tr>
+    	</thead> 
+    	<tbody>
+	{{ range . }}
+
+			<tr>
+				<td>{{ .Description }}</td>
+				<td>{{ .ValYear1 }}</td>
+				<td>{{ .ValYear2 }}</td>
+				<td>{{ .ValYear3 }}</td>
+				<td>{{ .ValYear4 }}</td>
+				<td>{{ .ValYear5 }}</td>
+				<td>{{ .ValYear6 }}</td>												
+			</tr>
+ 
+	{{ end }}    	
+    	
+   	 	</tbody>
+    </table>
+
+
+
+   	<table class="table table-bordered"> 
+    	<thead>
+        	<tr>
+            	<th>Descripción</th>
+            	<th>anio1</th>
+            	<th>anio2</th>
+            	<th>anio3</th>
+            	<th>anio4</th>
+            	<th>anio5</th>
+            	<th>anio6</th>            	            	            	
+        	</tr>
+    	</thead> 
+    	<tbody>
+	{{ range . }}
+
+			<tr>
+				<td>{{ .Description }}</td>
+				<td>{{ .ValYear1 }}</td>
+				<td>{{ .ValYear2 }}</td>
+				<td>{{ .ValYear3 }}</td>
+				<td>{{ .ValYear4 }}</td>
+				<td>{{ .ValYear5 }}</td>
+				<td>{{ .ValYear6 }}</td>												
+			</tr>
+ 
+	{{ end }}    	
+    	
+   	 	</tbody>
+    </table>
+
+
+
+{{ end }}
